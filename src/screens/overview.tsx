@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { ScreenContent } from 'components/ScreenContent';
+import { ScreenContent } from '~/components/ScreenContent';
 
 import { StyleSheet, View } from 'react-native';
 
