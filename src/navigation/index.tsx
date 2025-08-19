@@ -1,7 +1,7 @@
 import { createStaticNavigation, StaticParamList } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Overview from '../screens/overview';
-import Details from '../screens/details';
+import Overview from '../views/overview';
+import Details from '../views/details';
 import { BackButton } from '../components/BackButton';
 
 const Stack = createStackNavigator({

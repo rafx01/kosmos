@@ -9,7 +9,7 @@ type Props = StaticScreenProps<{
 
 export default function Details({ route }: Props) {
   return (
-    <View style={styles.container}>
+    <View className="bg-red-400">
       <ScreenContent
         path="screens/details.tsx"
         title={`Showing details for user ${route.params?.name}`}
@@ -17,10 +17,3 @@ export default function Details({ route }: Props) {
     </View>
   );
 }
-
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-  },
-});

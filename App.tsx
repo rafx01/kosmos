@@ -1,16 +1,21 @@
 import './global.css';
-
-import { DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { useColorScheme } from 'react-native';
-import { useMemo } from 'react';
-
 import 'react-native-gesture-handler';
-
 import Navigation from './src/navigation';
+import { createStackNavigator } from '@react-navigation/stack';
+import Overview from '~/views/overview';
+import Details from '~/views/details';
+import { createNavigationContainerRef, NavigationContainer } from '@react-navigation/native';
+
+const Stack = createStackNavigator();
+const navigationRef = createNavigationContainerRef();
 
 export default function App() {
-  const colorScheme = useColorScheme();
-  const theme = useMemo(() => (colorScheme === 'dark' ? DarkTheme : DefaultTheme), [colorScheme]);
-
-  return <Navigation theme={theme} />;
+  return (
+    <NavigationContainer ref={navigationRef}>
+      <Stack.Navigator>
+        <Stack.Screen name="Overview" component={Overview} options={{ headerShown: false }} />
+        <Stack.Screen name="Details" component={Details} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
