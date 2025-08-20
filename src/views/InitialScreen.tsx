@@ -7,6 +7,7 @@ import { TypewriterText } from '~/components/Typewriter';
 import { useGetAPOD } from '~/hooks/useGetAPOD';
 import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
+import { Footer } from '~/components/Footer';
 
 export default function InitialScreen() {
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
@@ -46,23 +47,26 @@ export default function InitialScreen() {
   }, [APOD?.data?.url, width]);
 
   return (
-    <ScrollView className="bg-[#1A1A1D] px-4 py-14" showsVerticalScrollIndicator={false}>
-      <View>
-        <TypewriterText texts={['Kosmos', 'Kосмос', 'Space']} typeSpeed={150} deleteSpeed={150} />
-      </View>
-      <Text className="font-semibold text-white">NASA's Astronomy Picture of the Day:</Text>
-      <Text className="pt-2 font-normal text-white">{APOD?.data?.title}</Text>
-      <View className="items-center justify-center pt-2">
-        <Image
-          style={imageDimensions}
-          placeholder={blurhash}
-          contentFit="cover"
-          transition={1000}
-          source={{ uri: APOD?.data?.url }}
-          onError={(error) => console.log('Erro ao carregar imagem:', error)}
-        />
-      </View>
-      <Text className=" flex-row  text-xs font-light text-white">{APOD?.data?.copyright}</Text>
-    </ScrollView>
+    <>
+      <ScrollView className="bg-[#1A1A1D] px-4 py-14" showsVerticalScrollIndicator={false}>
+        <View>
+          <TypewriterText texts={['Kosmos', 'Kосмос']} typeSpeed={150} deleteSpeed={150} />
+        </View>
+        <Text className="font-semibold text-white">NASA's Astronomy Picture of the Day:</Text>
+        <Text className="pt-2 font-normal text-white">{APOD?.data?.title}</Text>
+        <View className="items-center justify-center pt-2">
+          <Image
+            style={imageDimensions}
+            placeholder={blurhash}
+            contentFit="cover"
+            transition={1000}
+            source={{ uri: APOD?.data?.url }}
+            onError={(error) => console.log('Erro ao carregar imagem:', error)}
+          />
+        </View>
+        <Text className=" flex-row  text-xs font-light text-white">{APOD?.data?.copyright}</Text>
+      </ScrollView>
+      <Footer />
+    </>
   );
 }
