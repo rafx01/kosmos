@@ -1,6 +1,6 @@
 import { createStaticNavigation, StaticParamList } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Overview from '../views/overview';
+import Overview from '../views/InitialScreen';
 import Details from '../views/details';
 import { BackButton } from '../components/BackButton';
 
