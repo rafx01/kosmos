@@ -48,7 +48,7 @@ export default function InitialScreen() {
 
   return (
     <>
-      <ScrollView className="bg-[#1A1A1D] px-4 py-14" showsVerticalScrollIndicator={false}>
+      <ScrollView className=" px-4 py-14" showsVerticalScrollIndicator={false}>
         <View>
           <TypewriterText texts={['Kosmos', 'Kосмос']} typeSpeed={150} deleteSpeed={150} />
         </View>
