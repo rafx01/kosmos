@@ -17,12 +17,12 @@ export function Footer() {
       icon: <Ionicons name="planet-outline" size={26} style={{ color: '#c72138' }} />,
     },
     {
-      title: 'Vehicles',
+      title: 'Spacecrafts',
       icon: <Ionicons name="rocket-outline" size={26} style={{ color: '#c72138' }} />,
-      onPress: () => navigation.navigate('Vehicles'),
+      onPress: () => navigation.navigate('Spacecrafts'),
     },
     {
-      title: 'Vehicles',
+      title: 'Menu',
       icon: <Ionicons name="rocket-outline" size={26} style={{ color: '#c72138' }} />,
     },
   ];

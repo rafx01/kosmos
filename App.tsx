@@ -2,12 +2,12 @@ import './global.css';
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import InitialScreen from '~/views/InitialScreen';
-import Details from '~/views/Vehicles';
 import { createNavigationContainerRef, NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Vehicles from '~/views/Vehicles';
+import { Spacecrafts } from '~/views/Spacecrafts';
 import * as ScreenOrientation from 'expo-screen-orientation';
+import { ShuttlesList } from '~/views/ShuttlesList';
 
 if (__DEV__) {
   require('./ReactotronConfig');
@@ -38,14 +38,23 @@ export default function App() {
               backgroundColor: '#1A1A1D',
             },
             headerTintColor: '#fff',
-            cardStyle: { backgroundColor: '#1A1A1D' }, // Background das telas
+            cardStyle: { backgroundColor: '#1A1A1D' },
           }}>
           <Stack.Screen
             name="InitialScreen"
             component={InitialScreen}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="Vehicles" component={Vehicles} options={{ headerShown: false }} />
+          <Stack.Screen
+            name="Spacecrafts"
+            component={Spacecrafts}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ShuttlesList"
+            component={ShuttlesList}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </QueryClientProvider>

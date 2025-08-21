@@ -1,13 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
-import { ScreenContent } from '~/components/ScreenContent';
 import { Dimensions, ScrollView, Text, View, Image as RNImage } from 'react-native';
-import { Button } from '../components/Button';
-import { Template } from '~/components/Template';
-import { TypewriterText } from '~/components/Typewriter';
+import { TypewriterText } from '~/components/Typewriter/Typewriter';
 import { useGetAPOD } from '~/hooks/useGetAPOD';
 import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { Footer } from '~/components/Footer';
+import { Footer } from '~/components/Footer/Footer';
 
 export default function InitialScreen() {
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
