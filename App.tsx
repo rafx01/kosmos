@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Spacecrafts } from '~/views/Spacecrafts';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { ShuttlesList } from '~/views/ShuttlesList';
+import { ShuttleDetails } from '~/views/ShuttleDetails';
 
 if (__DEV__) {
   require('./ReactotronConfig');
@@ -53,6 +54,11 @@ export default function App() {
           <Stack.Screen
             name="ShuttlesList"
             component={ShuttlesList}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ShuttleDetails"
+            component={ShuttleDetails}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

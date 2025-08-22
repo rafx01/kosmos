@@ -4,7 +4,7 @@ import { Image } from 'expo-image';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { RouteList } from '~/types/RouteList';
 
-function Card({ title, image, onpress }: { title: string; image?: string; onpress?: () => void }) {
+function Card({ title, image, onpress }: { title?: string; image?: string; onpress?: () => void }) {
   return (
     <Pressable
       onPress={onpress}
@@ -32,10 +32,12 @@ export function Spacecrafts() {
       image: require('../../assets/shuttle2.png'),
       onpress: () => navigation.navigate('ShuttlesList'),
     },
+    ,
+    {
+      title: 'Space stations',
+      image: require('../../assets/mir.png'),
+    },
     // ,{
-    //   title: 'Rockets',
-    //   icon:
-    // },{
     //   title: 'Missions',
     //   icon:
     // }
@@ -43,9 +45,9 @@ export function Spacecrafts() {
 
   return (
     <Template pageName="Spacecrafts">
-      <View className="space-y-2">
+      <View className="gap-y-2">
         {data.map((item, index) => (
-          <Card key={index} title={item.title} image={item.image} onpress={item.onpress} />
+          <Card key={index} title={item?.title} image={item?.image} onpress={item?.onpress} />
         ))}
       </View>
     </Template>

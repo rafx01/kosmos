@@ -4,4 +4,5 @@ export type RouteList = {
   InitialScreen: ScreenProps;
   Spacecrafts: ScreenProps;
   ShuttlesList: ScreenProps;
+  ShuttleDetails: ScreenProps;
 };

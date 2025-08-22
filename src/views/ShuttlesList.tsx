@@ -1,11 +1,15 @@
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { Image } from 'expo-image';
 import { FlatList, Pressable, ScrollView, Text, View } from 'react-native';
 import { Template } from '~/components/Template/Template';
 import { shuttlesData } from '~/constants';
+import { RouteList } from '~/types/RouteList';
 
-function Card({ title, image }: { title: string; image?: string }) {
+function Card({ title, image, onpress }: { title: string; image?: string; onpress?: () => void }) {
   return (
-    <Pressable className="w-full flex-row items-center gap-x-6 rounded-md border border-slate-700 p-4">
+    <Pressable
+      onPress={onpress}
+      className="w-full flex-row items-center gap-x-6 rounded-md border border-slate-700 p-4">
       <View className="">
         <Image
           style={{ width: 140, height: 80 }}
@@ -21,6 +25,8 @@ function Card({ title, image }: { title: string; image?: string }) {
 }
 
 export function ShuttlesList() {
+  const navigation = useNavigation<NavigationProp<RouteList>>();
+
   return (
     <Template pageName="Shuttles">
       <View>
@@ -32,7 +38,19 @@ export function ShuttlesList() {
               paddingBottom: 20,
             }}
             data={shuttlesData}
-            renderItem={({ item }) => <Card title={item.title} image={item.image} />}
+            renderItem={({ item }) => {
+              return (
+                <Card
+                  title={item.title}
+                  image={item.image}
+                  onpress={() =>
+                    navigation.navigate('ShuttleDetails', {
+                      id: item.title,
+                    })
+                  }
+                />
+              );
+            }}
           />
         </View>
       </View>
