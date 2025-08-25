@@ -7,6 +7,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       sans: ['Roboto', 'sans-serif'],
+      helvetica: ['Helvetica', 'sans-serif'],
     },
   },
   plugins: [],

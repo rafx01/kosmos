@@ -47,9 +47,6 @@ export default function InitialScreen() {
 
   const { width, height } = Dimensions.get('window');
 
-  const blurhash =
-    '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-
   useEffect(() => {
     if (APOD?.data?.url) {
       RNImage.getSize(
@@ -88,7 +85,6 @@ export default function InitialScreen() {
         <View className="items-center justify-center pt-2">
           <Image
             style={imageDimensions}
-            placeholder={blurhash}
             contentFit="cover"
             transition={1000}
             source={{ uri: APOD?.data?.url }}
@@ -97,14 +93,10 @@ export default function InitialScreen() {
         </View>
         <Text className=" flex-row  text-xs font-light text-white">{APOD?.data?.copyright}</Text>
         <Text className="pt-4 text-xl font-semibold text-white">Upcoming Launches:</Text>
-        {/* <LaunchesCard
-          date={nextLaunches.data?.results[0]?.net}
-          image={nextLaunches.data?.results[0]?.image?.image_url}
-          launchSite={nextLaunches.data?.results[0]?.pad?.name}
-          name={nextLaunches.data?.results[0]?.name}
-        /> */}
+        {/* definir apenas os 5 próximos lançamentos */}
+        {/* validação de imagem para quem não tiver img */}
         <View style={{ gap: 8, paddingTop: 8 }}>
-          {nextLaunches.data?.results.map((item: any) => {
+          {nextLaunches.data?.results.slice(0, 5).map((item: any) => {
             return (
               <LaunchesCard
                 date={item?.net}
@@ -116,6 +108,7 @@ export default function InitialScreen() {
             );
           })}
         </View>
+        <Text className="text-xl font-semibold text-white">News:</Text>
       </ScrollView>
       <Footer />
     </>

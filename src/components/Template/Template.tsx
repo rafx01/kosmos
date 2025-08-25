@@ -13,7 +13,7 @@ export function Template({ children, pageName, logo }: props) {
   const navigation = useNavigation<NavigationProp<RouteList>>();
 
   return (
-    <SafeAreaView className=" px-4 py-14">
+    <SafeAreaView className="flex-1 px-4 py-20">
       <View className="flex-row items-center justify-between">
         <BackButton onPress={() => navigation.goBack()} />
         {logo}

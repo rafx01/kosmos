@@ -10,7 +10,10 @@ export function Footer() {
     {
       title: 'Home',
       icon: <Ionicons name="home-outline" size={26} style={{ color: '#c72138' }} />,
-      onPress: () => navigation.navigate('InitialScreen'),
+      onPress: () =>
+        navigation.navigate('InitialScreen', {
+          id: 'InitialScreen',
+        }),
     },
     {
       title: 'Mars',
@@ -19,7 +22,10 @@ export function Footer() {
     {
       title: 'Spacecrafts',
       icon: <Ionicons name="rocket-outline" size={26} style={{ color: '#c72138' }} />,
-      onPress: () => navigation.navigate('Spacecrafts'),
+      onPress: () =>
+        navigation.navigate('Spacecrafts', {
+          id: 'Spacecrafts',
+        }),
     },
     {
       title: 'Menu',

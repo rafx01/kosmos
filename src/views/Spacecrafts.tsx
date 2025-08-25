@@ -36,6 +36,7 @@ export function Spacecrafts() {
     {
       title: 'Space stations',
       image: require('../../assets/mir.png'),
+      onpress: () => navigation.navigate('StationsList'),
     },
     // ,{
     //   title: 'Missions',

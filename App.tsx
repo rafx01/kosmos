@@ -9,6 +9,8 @@ import { Spacecrafts } from '~/views/Spacecrafts';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { ShuttlesList } from '~/views/ShuttlesList';
 import { ShuttleDetails } from '~/views/ShuttleDetails';
+import { StationsList } from '~/views/StationsList';
+import { StationDetails } from '~/views/StationDetails';
 
 if (__DEV__) {
   require('./ReactotronConfig');
@@ -59,6 +61,16 @@ export default function App() {
           <Stack.Screen
             name="ShuttleDetails"
             component={ShuttleDetails}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="StationsList"
+            component={StationsList}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="StationDetails"
+            component={StationDetails}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
