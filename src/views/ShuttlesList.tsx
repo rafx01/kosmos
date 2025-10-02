@@ -10,7 +10,7 @@ function Card({ title, image, onpress }: { title: string; image?: string; onpres
     <Pressable
       onPress={onpress}
       className="w-full flex-row items-center gap-x-6 rounded-md border border-slate-700 p-4">
-      <View>
+      <View className="rounded-md bg-white">
         {image ? (
           <Image
             style={{ width: 140, height: 80 }}
@@ -20,7 +20,7 @@ function Card({ title, image, onpress }: { title: string; image?: string; onpres
           />
         ) : (
           <View className="h-[80px] w-[140px] items-center justify-center">
-            <Text className="font-helvetica text-3xl font-bold text-white">{title}</Text>
+            <Text className="font-helvetica text-3xl font-bold ">{title}</Text>
           </View>
         )}
       </View>
